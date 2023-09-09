@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>✈️ 여행을 떠나요</title>
+		<script type="module" src="./main.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<header id="header">
+				<h1>여행을 떠나요 ✈️</h1>
+			</header>
+			<main id="wrapper"></main>
+			<section class="control">
+				<select name="category" id="category">
+					<option value="shopping">쇼핑하기</option>
+					<option value="packing">준비하기</option>
+				</select>
+				<div>
+					<label for="item__input">
+						<input
+							type="text"
+							id="item__input"
+							placeholder="내용을 입력해주세요."
+						/>
+					</label>
+				</div>
+				<button class="addBtn">추가하기</button>
+			</section>
+		</div>
+	</body>
+</html>
