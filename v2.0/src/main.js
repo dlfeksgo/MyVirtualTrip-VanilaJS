@@ -1,5 +1,5 @@
-import { createPackingItem } from './components/item/packing.js';
-import { createShoppingItem } from './components/item/shopping.js';
+import { createPackingItem } from './components/Item/packing.js';
+import { createShoppingItem } from './components/Item/shopping.js';
 import { createSection } from './components/section.js';
 
 const $itemInput = document.querySelector('#item__input');
