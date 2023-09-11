@@ -25,13 +25,10 @@ export const createPackingItem = (value) => {
 		}
 	});
 
-	const editBtn = item.querySelector('.item__button--edit');
-	editBtn.addEventListener('click', () => {
-		editItem(item);
-	});
-
 	item.addEventListener('click', (e) => {
-		if (e.target.className === 'item__button--delete') {
+		if (e.target.className === 'item__button--edit') {
+			editItem(item);
+		} else if (e.target.className === 'item__button--delete') {
 			const title = item.parentNode.previousElementSibling;
 			item.previousElementSibling ? '' : title.classList.remove('active');
 			item.remove();
