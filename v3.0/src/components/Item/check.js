@@ -5,8 +5,6 @@ class CheckList extends ItemComponent {
 		super(value);
 		const input = this.item.querySelector('input');
 		const span = this.item.querySelector('span');
-		const editBtn = this.item.querySelector('.item__button--edit');
-		const deleteBtn = this.item.querySelector('.item__button--delete');
 
 		input.addEventListener('click', (e) => {
 			if (e.target.checked) {
@@ -16,19 +14,19 @@ class CheckList extends ItemComponent {
 			}
 		});
 
-		editBtn.addEventListener('click', () => {
-			this.editItem(`
-			<div>
-				<input type="text" class="item__input--edit" />
-			</div>
-			<div>
-				<button type="button" class="item__button--submit">수정완료</button>
-			</div>
-			`);
-		});
-
-		deleteBtn.addEventListener('click', () => {
-			this.deleteItem();
+		this.item.addEventListener('click', (e) => {
+			if (e.target.className === 'item__button--edit') {
+				this.editItem(`
+				<div>
+					<input type="text" class="item__input--edit" />
+				</div>
+				<div>
+					<button type="button" class="item__button--submit">수정완료</button>
+				</div>
+				`);
+			} else if (e.target.className === 'item__button--delete') {
+				this.deleteItem();
+			}
 		});
 	}
 
