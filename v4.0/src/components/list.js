@@ -1,6 +1,6 @@
 import { allItems } from '../app.js';
-import CheckList from './Item/check.js';
-import TextList from './Item/text.js';
+import CheckItem from './Item/check.js';
+import TextItem from './Item/text.js';
 
 class List {
 	constructor(sectionId) {
@@ -10,9 +10,9 @@ class List {
 
 		allItems.forEach((item) => {
 			if (item.type === 'text') {
-				newItem = new TextList(item.id, item.content);
+				newItem = new TextItem(item.id, item.content);
 			} else {
-				newItem = new CheckList(item.id, item.content, item.state);
+				newItem = new CheckItem(item.id, item.content, item.state);
 			}
 			sectionId === item.sectionId && this.ul.append(newItem.item);
 		});

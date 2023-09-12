@@ -1,7 +1,7 @@
 import { checkedState, init } from '../../app.js';
 import { ItemComponent } from './itemComponent.js';
 
-class CheckList extends ItemComponent {
+class CheckItem extends ItemComponent {
 	constructor(id, value, state) {
 		super(id, value, state);
 		const input = this.item.querySelector('input');
@@ -49,4 +49,4 @@ class CheckList extends ItemComponent {
 	}
 }
 
-export default CheckList;
+export default CheckItem;

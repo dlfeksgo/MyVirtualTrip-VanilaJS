@@ -1,6 +1,6 @@
 import { ItemComponent } from './itemComponent.js';
 
-class TextList extends ItemComponent {
+class TextItem extends ItemComponent {
 	constructor(id, value) {
 		super(id, value);
 
@@ -35,4 +35,4 @@ class TextList extends ItemComponent {
 	}
 }
 
-export default TextList;
+export default TextItem;
