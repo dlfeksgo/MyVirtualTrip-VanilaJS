@@ -1,12 +1,13 @@
 import { init, removeItem, updateItem } from '../../app.js';
 
 export class ItemComponent {
-	constructor(id, value) {
+	constructor(id, value, state) {
 		this.id = id;
 		this.value = value;
+		this.state = state;
 		this.item = document.createElement('li');
 		this.item.className = 'item__container';
-		this.item.innerHTML = this.render(this.value);
+		this.item.innerHTML = this.render(this.value, this.state);
 	}
 
 	render() {}

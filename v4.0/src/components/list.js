@@ -12,7 +12,7 @@ class List {
 			if (item.type === 'text') {
 				newItem = new TextList(item.id, item.content);
 			} else {
-				newItem = new CheckList(item.id, item.content);
+				newItem = new CheckList(item.id, item.content, item.state);
 			}
 			sectionId === item.sectionId && this.ul.append(newItem.item);
 		});

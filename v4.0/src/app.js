@@ -9,7 +9,6 @@ export let allItems = [];
 
 const main = document.querySelector('#section');
 const select = document.querySelector('#category');
-const allSections = document.querySelectorAll('.section');
 
 class App {
 	constructor() {
@@ -53,7 +52,7 @@ class App {
 		if (select.selectedIndex === 0) {
 			return alert('카테고리를 선택해주세요.');
 		}
-		sectionList.forEach((section, idx) => {
+		sectionList.forEach((section) => {
 			if (section.id === select.selectedIndex) {
 				addItem(section.id, section.type, value);
 			}
@@ -74,16 +73,29 @@ const addOption = (option) => {
 };
 
 const addItem = (sectionId, type, value) => {
-	const newData = [
-		...allItems,
-		{ sectionId, id: itemId, type, content: value },
-	];
+	let newData;
+	if (type === 'text') {
+		newData = [...allItems, { sectionId, id: itemId, type, content: value }];
+	} else if (type === 'check') {
+		newData = [
+			...allItems,
+			{ sectionId, id: itemId, type, content: value, state: false },
+		];
+	}
 	allItems = newData;
+	itemId++;
 };
 
 export const updateItem = (targetId, value) => {
 	const newData = allItems.map((item) => {
 		return item.id === targetId ? { ...item, content: value } : item;
+	});
+	allItems = newData;
+};
+
+export const checkedState = (targetId, state) => {
+	const newData = allItems.map((item) => {
+		return item.id === targetId ? { ...item, state } : item;
 	});
 	allItems = newData;
 };
@@ -104,6 +116,7 @@ export const init = () => {
 	optionList.forEach((option) => {
 		new SelectOption(option);
 	});
+	console.log(allItems);
 };
 
 new App();

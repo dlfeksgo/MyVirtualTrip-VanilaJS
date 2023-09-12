@@ -1,17 +1,20 @@
+import { checkedState, init } from '../../app.js';
 import { ItemComponent } from './itemComponent.js';
 
 class CheckList extends ItemComponent {
-	constructor(id, value) {
-		super(id, value);
+	constructor(id, value, state) {
+		super(id, value, state);
 		const input = this.item.querySelector('input');
-		const span = this.item.querySelector('span');
 
 		input.addEventListener('click', (e) => {
-			if (e.target.checked) {
-				span.classList.add('complete');
-			} else {
-				span.classList.remove('complete');
-			}
+			// if (e.target.checked) {
+			// 	span.classList.add('complete');
+			// } else {
+			// 	span.classList.remove('complete');
+			// }
+			console.log(e.target.checked);
+			checkedState(this.id, e.target.checked);
+			init();
 		});
 
 		this.item.addEventListener('click', (e) => {
@@ -30,12 +33,12 @@ class CheckList extends ItemComponent {
 		});
 	}
 
-	render(value) {
+	render(value, state) {
 		return `
 		<div class="item">
 			<label>
-				<input type="checkbox"/>
-				<span>${value}</span>
+				<input type="checkbox" name="check-state" ${state && 'checked'}/>
+				<span class="${state && 'complete'}">${value}</span>
 			</label>
 			<div>
 				<button type="button" class="item__button--edit">수정</button>
