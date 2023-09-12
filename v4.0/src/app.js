@@ -111,12 +111,16 @@ export const init = () => {
 	sectionList.forEach((section) => {
 		const newSection = new Section(section);
 		main.append(newSection.section);
+		allItems.forEach((item) => {
+			item.sectionId === section.id &&
+				newSection.section.children[0].classList.add('active');
+		});
 	});
+
 	select.innerHTML = '';
 	optionList.forEach((option) => {
 		new SelectOption(option);
 	});
-	console.log(allItems);
 };
 
 new App();
