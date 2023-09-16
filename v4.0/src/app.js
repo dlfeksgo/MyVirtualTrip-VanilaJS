@@ -31,16 +31,16 @@ class App {
 	}
 
 	createSection = (type) => {
-		const sectionCategory = prompt('추가할 카테고리 이름을 입력해주세요.');
-		if (sectionCategory.length < 2) {
+		const sectionName = prompt('추가할 카테고리 이름을 입력해주세요.');
+		if (sectionName.length < 2) {
 			return alert('2글자 이상 입력해주세요.');
 		}
 		const title = prompt('카테고리를 나타낼 제목을 입력해주세요.');
 		if (!title) {
 			return alert('2글자 이상 입력해주세요.');
 		}
-		addSection(type, sectionCategory, title);
-		addOption(sectionCategory);
+		addSection(type, sectionName, title);
+		addOption(sectionName);
 		init();
 	};
 
@@ -53,7 +53,7 @@ class App {
 			return alert('카테고리를 선택해주세요.');
 		}
 		sectionList.forEach((section) => {
-			if (section.id === select.selectedIndex) {
+			if (section.name === select.value) {
 				addItem(section.id, section.type, value);
 			}
 		});
