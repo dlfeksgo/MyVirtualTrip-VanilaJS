@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>마이버추얼트립 v3.0</title>
+		<title>마이버추얼트립</title>
 		<script type="module" src="./src/app.js" defer></script>
 		<link rel="stylesheet" href="style.css" />
 	</head>
@@ -12,15 +12,15 @@
 		<div class="app">
 			<header id="header">
 				<h1>여행을 떠나요 ✈️</h1>
-				<span>v3.0</span>
+				<span>state</span>
 			</header>
-			<main id="section">
-				<button type="button" class="section__btn--add">카테고리 추가</button>
-			</main>
+			<div class="section__btn">
+				<button type="button" class="section__btn--text">기본형</button>
+				<button type="button" class="section__btn--check">체크형</button>
+			</div>
+			<main id="section"></main>
 			<section class="control">
-				<select name="category" id="category">
-					<option value="none" class="category__option">선택</option>
-				</select>
+				<select name="category" id="category"></select>
 				<div>
 					<label for="item__input">
 						<input

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>마이버추얼트립</title>
+		<script type="module" src="./src/app.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<header id="header">
+				<h1>여행을 떠나요 ✈️</h1>
+				<span>class</span>
+			</header>
+			<main id="section">
+				<button type="button" class="section__btn--add">카테고리 추가</button>
+			</main>
+			<section class="control">
+				<select name="category" id="category">
+					<option value="none" class="category__option">선택</option>
+				</select>
+				<div>
+					<label for="item__input">
+						<input
+							type="text"
+							id="item__input"
+							placeholder="내용을 입력해주세요."
+						/>
+					</label>
+				</div>
+				<button class="addBtn">추가하기</button>
+			</section>
+		</div>
+	</body>
+</html>
